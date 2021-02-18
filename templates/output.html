@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Image Description </title>
+    <style>
+    body{
+      background: rgba(0,0,0,0.9);
+    }
+    h1{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 170px;
+      color: #ffffff;
+      font-family: Arial;
+    }
+    h2{
+      color: #ffffff;
+      font-family: Arial;
+      text-align: center
+    }
+    .output{
+      margin : auto;
+      text-align: center
+      width: 95%;
+      padding: 10px;
+    }
+    .output_image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: Coral;
+      color: black;
+      text-align: center;
+    }
+</style>
+
+</head>
+<body>
+    <h1> Image Description Generator  </h1>
+
+    <div class = "output">
+        {% if output %}
+          <h2> Generated Caption : <i> {{output['caption']}} </i> </h2>
+          <br>
+          <img src ="{{output['obj']}}" width= "1000" height="1000" class="output_image">
+        {% endif %}
+    </div>
+
+    <div class = "footer">
+    <p>
+    <i>Note : The image description generator is trained on te Flickr8k dataset, hence it won't be able to produce semantically correct descriptions for images which the model has not been trained on.</i>
+    </p>
+    </div>
+
+    <br>
+
+</body>
+</html>
